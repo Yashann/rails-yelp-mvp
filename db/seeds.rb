@@ -23,5 +23,17 @@ restaurants_attributes = [
     phone_number: '0187653512'
   }
 ]
+
 Restaurant.create!(restaurants_attributes)
+
+r1 = Restaurant.find(1)
+rev = Review.new(content: "amawing",rating: 5)
+rev.restaurant = r1
+rev.save
+
+r2 = Restaurant.find(3)
+rev = Review.new(content: "amazing",rating: 4)
+rev.restaurant = r2
+rev.save
+
 puts 'Finished!'
